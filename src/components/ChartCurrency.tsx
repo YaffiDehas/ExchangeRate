@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { useSelector } from 'react-redux';
 import { ShowMarkParams } from '@mui/x-charts/models';
 import { LineChart } from '@mui/x-charts/LineChart';
-import { SelectedRows, Serie } from '../redux/currenciesByDates/types';
+import { SelectedRows } from '../redux/currenciesByDates/types';
 import Typography from '@mui/material/Typography';
 import { Button, Grid } from '@mui/material';
 import { getCurrencyWeekly, getCurrencyMonthly, getCurrencyYearly } from '../redux/currenciesByDates/actions';
@@ -12,7 +12,6 @@ import { getCurrencyWeekly, getCurrencyMonthly, getCurrencyYearly } from '../red
 export const ChartCurrency: React.FC = ({ selectedRows }: any) => {
   const dispatch = useAppDispatch();
   const selectedCurrencies = useSelector((state: any) => state.curreniesValues.selectedCurrencies);
-  const serie: Serie = useSelector((state: any) => state.curreniesValues.serie);
   const currenciesNames: string[] = [];
   selectedRows && selectedRows.map((selectedRow: SelectedRows) => {
     selectedCurrencies.map((currency: any) => {
@@ -32,10 +31,6 @@ export const ChartCurrency: React.FC = ({ selectedRows }: any) => {
       month: '2-digit',
       day: '2-digit',
     });
-  const showMark = (params: ShowMarkParams) => {
-    const { position } = params as ShowMarkParams<Date>;
-    return position.getHours() === 0;
-  };
   const ySerie: any = [];
   currenciesValues.map((value) => {
     ySerie.push({ data: value })
@@ -55,20 +50,20 @@ export const ChartCurrency: React.FC = ({ selectedRows }: any) => {
   } as const;
 
   const handleDurationClick = (frequncy: string) => {
-    switch (frequncy) {
-      case "DD":
-        dispatch(getCurrencyWeekly.request());
-        break;
-      case "MM":
-        dispatch(getCurrencyMonthly.request());
-        break;
-      case "YY":
-        dispatch(getCurrencyYearly.request());
-        break;
-      default:
-        dispatch(getCurrencyWeekly.request());
-        break;
-    }
+      switch (frequncy) {
+        case "DD":
+          dispatch(getCurrencyWeekly.request());
+          break;
+        case "MM":
+          dispatch(getCurrencyMonthly.request());
+          break;
+        case "YY":
+          dispatch(getCurrencyYearly.request());
+          break;
+        default:
+          dispatch(getCurrencyWeekly.request());
+          break;
+      }
   };
 
   return (

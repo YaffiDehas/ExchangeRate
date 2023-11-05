@@ -24,3 +24,4 @@ export const getCurrencyYearly = createAsyncAction(
     'CURRENCIES/GET_CURRENCIES_YEARLY_FAILURE',
 )<void, any, string>();
 
+

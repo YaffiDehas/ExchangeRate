@@ -2,8 +2,7 @@ import { LoadingState } from "../utils";
 
 export interface SeriesCurrencyState {
   loading: LoadingState
-  selectedCurrencies: Currency[],
-  serie: Serie
+  selectedCurrencies: Currency[]
 }
 export interface Currency {
   id: string,
@@ -16,9 +15,4 @@ export interface SelectedRows {
   key: string,
   currentExchangeRate: number,
   currentChange:number
-}
-
-export interface Serie {
-  xSerie: any,
-  ySerie: any
 }

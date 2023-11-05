@@ -1,7 +1,5 @@
-import * as React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '../redux/hooks';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
@@ -9,7 +7,6 @@ import TimelineIcon from '@mui/icons-material/Timeline';
 import { DataGrid } from '@mui/x-data-grid';
 import clsx from 'clsx';
 import { ChartCurrency } from './ChartCurrency';
-import { getCurrencyWeekly } from '../redux/currenciesByDates/actions';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
@@ -45,7 +42,6 @@ const columns = [
 ];
 
 export default function CurrenciesList() {
-    const dispatch = useAppDispatch();
     const [displayChart, setDisplayChart] = useState(false);
     const [selectedCurrencies, setSelectedCurrencies] = useState();
     const currenciesList = useSelector((state) => state.exchangeRates.currenciesList);
