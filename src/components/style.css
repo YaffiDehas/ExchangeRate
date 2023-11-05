@@ -1,0 +1,21 @@
+.container {
+  direction: rtl;
+  color: #1e6991;
+}
+
+.css-t89xny-MuiDataGrid-columnHeaderTitle {
+  color: #1e6991;
+}
+
+.super-app.positive.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-cell--editable.MuiDataGrid-withBorderColor {
+  color: darkgreen;
+}
+
+.super-app.negative.MuiDataGrid-cell.MuiDataGrid-cell--textRight.MuiDataGrid-cell--editable.MuiDataGrid-withBorderColor {
+
+  color: darkred;
+}
+
+.super-app.negative {
+  color: '#1a3e72',
+}
