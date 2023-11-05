@@ -59,7 +59,6 @@ export default function CurrenciesList() {
     });
 
     const handleDisplayChart = () => {
-        dispatch(getCurrencyWeekly.request());
         setDisplayChart(!displayChart);
     }
 

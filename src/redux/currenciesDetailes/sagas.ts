@@ -24,7 +24,6 @@ export function* requestGetCurrenciesList() {
         })
         yield put(actions.getCurrenciesList.success(currenciesList));
 
-
     } catch (e) {
         yield put(actions.getCurrenciesList.failure(''));
     }

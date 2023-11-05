@@ -8,7 +8,7 @@ import { getLoadingSelector } from '../redux/currenciesDetailes/selectors';
 import { LoadingState } from '../redux/utils';
 import CurrenciesList from './CurrenciesList';
 import { getCurrenciesList } from '../redux/currenciesDetailes/actions';
-import { getCurrencyWeekly } from '../redux/currenciesByDates/actions'
+import { getCurrencyWeekly, getCurrencyYearly } from '../redux/currenciesByDates/actions'
 import './style.css';
 import background from '../assets/background.png';
 
@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
     useEffect(() => {
         dispatch(getCurrenciesList.request());
         dispatch(getCurrencyWeekly.request());
-
+        // dispatch(getCurrencyYearly.request());
     }, [])
 
     const ImageSrc = styled('span')({

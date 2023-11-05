@@ -13,4 +13,4 @@ export const enum Currencies {
   SWITZERLAND="CHF"
 }
 
-export const SelectedCurrencies = ['GBP','USD', 'SEK', 'CHF'];
+export const SelectedCurrencies = ['GBP','USD', 'SEK','CHF'];

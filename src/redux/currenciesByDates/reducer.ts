@@ -11,7 +11,8 @@ type Actions = ActionType<typeof actions>;
 
 const initialState: SeriesCurrencyState = {
     loading: LoadingState.IDLE,
-    selectedCurrencies: []
+    selectedCurrencies: [],
+    serie: { xSerie: [], ySerie: [] }
 };
 
 const currencyByDatesReducer: Reducer<SeriesCurrencyState, Actions> = (state = initialState, action) => {
